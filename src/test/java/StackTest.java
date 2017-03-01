@@ -12,5 +12,11 @@ public class StackTest {
 	int popped = stack.pop();
 	assertTrue("We should get what we pushed into the stack", popped == pushed);
     }
+    
+    @Test(expected = NullPointerException.class)
+    public void testPopEmptyStack() {
+	Stack stack = new Stack();
+	stack.pop();
+    }
 }
 	
