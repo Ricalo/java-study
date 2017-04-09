@@ -17,4 +17,12 @@ public class BubbleSortTest {
         assertTrue("Bubble sort works with arrays in reverse order", sortedData[0] == 1);
         assertTrue("Bubble sort works with arrays in reverse order", sortedData[3] == 4);
     }
+
+    @Test
+    public void testEmpty() {
+        int[] data = {};
+        int[] sortedData = BubbleSort.sort(data);
+        assertTrue("Bubble sort works with empty arrays",
+                sortedData.length == 0);
+    }
 }
