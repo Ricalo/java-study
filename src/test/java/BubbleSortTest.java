@@ -29,4 +29,12 @@ public class BubbleSortTest {
         assertTrue("Bubble sort works with empty arrays",
                 sortedData.length == 0);
     }
+
+    @Test
+    public void testSameNumber() {
+        int[] data = {1, 1, 1, 1};
+        int[] sortedData = BubbleSort.sort(data);
+        assertTrue("Bubble sort works with an array with the same number in it",
+                sortedData.length == 4);
+    }
 }
