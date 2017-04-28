@@ -37,4 +37,12 @@ public class BubbleSortTest {
         assertTrue("Bubble sort works with an array with the same number in it",
                 sortedData.length == 4);
     }
+
+    @Test
+    public void testOneElement() {
+        int[] data = {672};
+        int[] sortedData = BubbleSort.sort(data);
+        assertTrue("Bubble sort works with an array of one element",
+                sortedData.length == 1);
+    }
 }
