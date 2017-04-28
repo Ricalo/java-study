@@ -1,4 +1,4 @@
-import org.checkerframework.checker.nullness.qual.*;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
 public class BubbleSort {
