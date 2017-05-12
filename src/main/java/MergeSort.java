@@ -1,15 +1,28 @@
 import java.util.Arrays;
 
 public class MergeSort {
-    public static void sort(int[] array) {
+    private static int index;
+    private static int[] ret;
+
+    public static int[] sort(int[] array) {
+        ret = new int[array.length];
+        index = 0;
+
+        internalSort(array);
+
+        System.out.println("Results: " + Arrays.toString(ret));
+        return ret;
+    }
+
+    private static void internalSort(int[] array) {
         System.out.println("Splitting " + Arrays.toString(array));
         if(array.length > 1) {
             int mid = array.length / 2;
             int[] left = Arrays.copyOfRange(array, 0, mid);
             int[] right = Arrays.copyOfRange(array, mid, array.length);
 
-            sort(left);
-            sort(right);
+            internalSort(left);
+            internalSort(right);
 
             int i = 0;
             int j = 0;
@@ -38,6 +51,9 @@ public class MergeSort {
                 j++;
                 resultIndex++;
             }
+        } else {
+            ret[index] = array[0];
+            index++;
         }
         System.out.println("Merging " + Arrays.toString(array));
     }
