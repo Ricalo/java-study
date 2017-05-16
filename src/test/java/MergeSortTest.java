@@ -11,4 +11,15 @@ public class MergeSortTest {
         assertTrue("Merge sort works with already sorted arrays",
                 sortedData[3] == 4);
     }
+
+    @Test
+    public void testWorstScenario() {
+        int[] data = {4, 3, 2, 1};
+        int[] sortedData = MergeSort.sort(data);
+
+        assertTrue("Merge sort works with arrays in reverse order",
+                sortedData[0] == 4);
+        assertTrue("Merge sort works with arrays in reverse order",
+                sortedData[3] == 1);
+    }
 }
