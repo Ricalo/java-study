@@ -5,6 +5,10 @@ public class MergeSort {
     private static int[] ret;
 
     public static int[] sort(int[] array) {
+        if(array.length < 2) {
+            return array;
+        }
+
         ret = new int[array.length];
         index = 0;
 
