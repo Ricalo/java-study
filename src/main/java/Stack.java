@@ -1,3 +1,5 @@
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 public class Stack {
     ListElement head = null;
 
@@ -11,7 +13,7 @@ public class Stack {
         }
     }
 
-    public void push(int data) {
+    public void push(@NonNull int data) {
         ListElement newElement = new ListElement();
         newElement.data = data;
 
@@ -31,3 +33,4 @@ public class Stack {
         return returnValue;
     }
 }
+
