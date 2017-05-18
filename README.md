@@ -8,6 +8,7 @@ language.
 ## Algorithms
 
 * Bubble sort
+* Insertion sort
 * Merge sort
 
 ## Data structures
