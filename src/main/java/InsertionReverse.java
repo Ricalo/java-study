@@ -1,5 +1,7 @@
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 public class InsertionReverse {
-    public static int[] sort(int[] array) {
+    public static int[] sort(@NonNull int[] array) {
         for(int j = 1; j < array.length; j++) {
             int key = array[j];
             int i = j - 1;
