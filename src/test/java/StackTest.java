@@ -29,5 +29,28 @@ public class StackTest {
             stack.push(i);
         }
     }
+
+    @Test
+    public void testToStringEmptyStack() {
+        Stack stack = new Stack();
+
+        assertTrue(
+                "Empty stack should return empty string",
+                stack.toString().length() == 0
+                );
+    }
+
+    @Test
+    public void testToStringOneElement() {
+        Stack stack = new Stack();
+
+        int pushed = 1;
+        stack.push(pushed);
+
+        assertTrue(
+                "One element stack should return the element + \\n",
+                stack.toString().equals(String.valueOf(pushed) + "\n")
+                );
+    }
 }
 
