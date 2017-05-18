@@ -1,7 +1,8 @@
+import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
 public class InsertionSort {
-    public static int[] sort(int[] array) {
+    public static int[] sort(@NonNull int[] array) {
         for(int j = 1; j < array.length; j++) {
             int key = array[j];
         System.out.println("Sorting key: " + key);
