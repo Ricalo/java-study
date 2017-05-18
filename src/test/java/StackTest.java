@@ -17,8 +17,8 @@ public class StackTest {
     
     @Test(expected = NullPointerException.class)
     public void testPopEmptyStack() {
-	Stack stack = new Stack();
-	stack.pop();
+        Stack stack = new Stack();
+        stack.pop();
     }
 
     @Test
@@ -30,4 +30,4 @@ public class StackTest {
         }
     }
 }
-	
+
