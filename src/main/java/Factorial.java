@@ -1,7 +1,7 @@
-import java.util.Arrays;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class Factorial {
-    public static int execute(int value) {
+    public static int execute(@NonNull int value) {
         if(value <= 1) {
         return 1;
         } else {
