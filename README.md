@@ -8,6 +8,7 @@ language.
 ## Algorithms
 
 * Bubble sort
+* Factorial
 * Insertion sort
 * Merge sort
 
@@ -18,3 +19,4 @@ language.
 ## Contact
 
 [Twitter](https://twitter.com/ricalo)
+
