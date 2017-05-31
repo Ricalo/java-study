@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class MergeSort {
-    private static int index;
     private static int[] ret;
 
     public static int[] sort(int[] array) {
@@ -9,12 +8,13 @@ public class MergeSort {
             return array;
         }
 
-        ret = new int[array.length];
-        index = 0;
+        // Make a clone of the initial array just to preserve it
+        ret = (int[])array.clone();
 
-        internalSort(array);
+        internalSort(ret);
 
-        System.out.println("Results: " + Arrays.toString(ret));
+        System.out.println("Original: " + Arrays.toString(array));
+        System.out.println("  Sorted: " + Arrays.toString(ret));
         return ret;
     }
 
@@ -55,10 +55,8 @@ public class MergeSort {
                 j++;
                 resultIndex++;
             }
-        } else {
-            ret[index] = array[0];
-            index++;
         }
+
         System.out.println("Merging " + Arrays.toString(array));
     }
 }
