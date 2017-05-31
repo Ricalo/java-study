@@ -18,9 +18,9 @@ public class MergeSortTest {
         int[] sortedData = MergeSort.sort(data);
 
         assertTrue("Merge sort works with arrays in reverse order",
-                sortedData[0] == 4);
+                sortedData[0] == 1);
         assertTrue("Merge sort works with arrays in reverse order",
-                sortedData[3] == 1);
+                sortedData[3] == 4);
     }
 
     @Test
