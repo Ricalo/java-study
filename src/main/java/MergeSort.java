@@ -36,12 +36,11 @@ public class MergeSort {
                 if(left[i] < right[j]) {
                     array[resultIndex] = left[i];
                     i++;
-                    resultIndex++;
                 } else {
                     array[resultIndex] = right[j];
                     j++;
-                    resultIndex++;
                 }
+                resultIndex++;
             }
 
             while(i < left.length) {
@@ -60,3 +59,4 @@ public class MergeSort {
         System.out.println("Merging " + Arrays.toString(array));
     }
 }
+
