@@ -11,19 +11,23 @@ public class QuickSort {
         // Make a clone of the initial array just to preserve it
         ret = (int[])array.clone();
 
-        internalSort(ret);
+        internalSort(ret, 0, ret.length - 1);
 
         System.out.println("Original: " + Arrays.toString(array));
         System.out.println("  Sorted: " + Arrays.toString(ret));
         return ret;
     }
 
-    private static void internalSort(int[] array) {
-        System.out.println("Dividing " + Arrays.toString(array));
-        int i = 0;
-        int j = array.length - 1;
+    private static void internalSort(int[] array, int start, int end) {
+        System.out.println("Start: " + start + " End: " + end);
 
-        if(array.length > 1) {
+        if(end > 0) {
+            System.out.println("Dividing " + Arrays.toString(Arrays.copyOfRange(array, start, end)));
+        }
+        int i = start;
+        int j = end;
+
+        if(end - start > 1) {
             while(j > i) {
                 if(array[j] < array[j-1]) {
                     int temp = array[j];
@@ -37,10 +41,8 @@ public class QuickSort {
                     i = i + 1;
                 }
             }
-            int[] left = Arrays.copyOfRange(array, 0, i);
-            int[] right = Arrays.copyOfRange(array, j, array.length);
-            internalSort(left);
-            internalSort(right);
+            internalSort(array, start, i - 1);
+            internalSort(array, j, end);
         }
     }
 }
