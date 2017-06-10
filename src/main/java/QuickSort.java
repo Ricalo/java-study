@@ -19,13 +19,8 @@ public class QuickSort {
     }
 
     private static void internalSort(int[] array, int start, int end) {
+        System.out.println("Current array: " + Arrays.toString(array));
         System.out.println("Start: " + start + " End: " + end);
-
-        if(end > 0) {
-            // copyOfRange 'to' parameter is exclusive
-            System.out.println("Dividing " +
-                    Arrays.toString(Arrays.copyOfRange(array, start, end + 1)));
-        }
 
         if(end - start > 1) {
             int i = start;
@@ -44,6 +39,10 @@ public class QuickSort {
                     i = i + 1;
                 }
             }
+
+            // Print the next recursive calls
+            System.out.print("Left: " + Arrays.toString(Arrays.copyOfRange(array, start, i)));
+            System.out.println(" - Right: " + Arrays.toString(Arrays.copyOfRange(array, j, end + 1)));
 
             if(i > 1) {
                 internalSort(array, start, i - 1);
