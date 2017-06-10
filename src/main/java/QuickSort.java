@@ -22,7 +22,7 @@ public class QuickSort {
         System.out.println("Current array: " + Arrays.toString(array));
         System.out.println("Start: " + start + " End: " + end);
 
-        if(end - start > 1) {
+        if(end - start > 0) {
             int i = start;
             int j = end;
 
@@ -48,7 +48,7 @@ public class QuickSort {
                 internalSort(array, start, i - 1);
             }
 
-            internalSort(array, j, end);
+            internalSort(array, j + 1, end);
         }
     }
 }
