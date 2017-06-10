@@ -11,6 +11,7 @@ language.
 * Factorial
 * Insertion sort
 * Merge sort
+* Quick sort
 
 ## Data structures
 
