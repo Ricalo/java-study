@@ -22,7 +22,9 @@ public class QuickSort {
         System.out.println("Start: " + start + " End: " + end);
 
         if(end > 0) {
-            System.out.println("Dividing " + Arrays.toString(Arrays.copyOfRange(array, start, end)));
+            // copyOfRange 'to' parameter is exclusive
+            System.out.println("Dividing " +
+                    Arrays.toString(Arrays.copyOfRange(array, start, end + 1)));
         }
 
         if(end - start > 1) {
