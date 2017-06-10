@@ -24,10 +24,11 @@ public class QuickSort {
         if(end > 0) {
             System.out.println("Dividing " + Arrays.toString(Arrays.copyOfRange(array, start, end)));
         }
-        int i = start;
-        int j = end;
 
         if(end - start > 1) {
+            int i = start;
+            int j = end;
+
             while(j > i) {
                 if(array[j] < array[j-1]) {
                     int temp = array[j];
