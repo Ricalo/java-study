@@ -44,7 +44,11 @@ public class QuickSort {
                     i = i + 1;
                 }
             }
-            internalSort(array, start, i - 1);
+
+            if(i > 1) {
+                internalSort(array, start, i - 1);
+            }
+
             internalSort(array, j, end);
         }
     }
