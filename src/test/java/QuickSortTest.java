@@ -46,4 +46,26 @@ public class QuickSortTest {
         assertTrue("Quick sort works with an array of one element",
                 sortedData.length == 1);
     }
+
+    @Test
+    public void testOddNumber() {
+        int[] data = {4, 3, 5, 2, 1};
+        int[] sortedData = QuickSort.sort(data);
+
+        assertTrue("Quick sort works with an odd number of elements",
+                sortedData[0] == 1);
+        assertTrue("Quick sort works with an odd number of elements",
+                sortedData[4] == 5);
+    }
+
+    @Test
+    public void testNegative() {
+        int[] data = {-4, -3, -5, -2, -1};
+        int[] sortedData = QuickSort.sort(data);
+
+        assertTrue("Quick sort works with negative numbers",
+                sortedData[0] == -5);
+        assertTrue("Quick sort works with negative numbers",
+                sortedData[4] == -1);
+    }
 }

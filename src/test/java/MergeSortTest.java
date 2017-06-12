@@ -46,4 +46,26 @@ public class MergeSortTest {
         assertTrue("Merge sort works with an array of one element",
                 sortedData.length == 1);
     }
+
+    @Test
+    public void testOddNumber() {
+        int[] data = {4, 3, 5, 2, 1};
+        int[] sortedData = MergeSort.sort(data);
+
+        assertTrue("Merge sort works with an odd number of elements",
+                sortedData[0] == 1);
+        assertTrue("Merge sort works with an odd number of elements",
+                sortedData[4] == 5);
+    }
+
+    @Test
+    public void testNegative() {
+        int[] data = {-4, -3, -5, -2, -1};
+        int[] sortedData = MergeSort.sort(data);
+
+        assertTrue("Merge sort works with negative numbers",
+                sortedData[0] == -5);
+        assertTrue("Merge sort works with negative numbers",
+                sortedData[4] == -1);
+    }
 }
