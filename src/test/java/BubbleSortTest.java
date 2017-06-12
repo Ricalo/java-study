@@ -38,5 +38,23 @@ public class BubbleSortTest {
         int[] sortedData = BubbleSort.sort(data);
         assertTrue(sortedData.length == 1);
     }
+
+    @Test
+    public void testOddNumber() {
+        int[] data = {4, 3, 5, 2, 1};
+        int[] sortedData = BubbleSort.sort(data);
+
+        assertTrue(sortedData[0] == 1);
+        assertTrue(sortedData[4] == 5);
+    }
+
+    @Test
+    public void testNegative() {
+        int[] data = {-4, -3, -5, -2, -1};
+        int[] sortedData = BubbleSort.sort(data);
+
+        assertTrue(sortedData[0] == -5);
+        assertTrue(sortedData[4] == -1);
+    }
 }
 
