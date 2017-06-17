@@ -19,8 +19,8 @@ public class MergeSort {
     }
 
     private static void internalSort(int[] array) {
-        System.out.println("Splitting " + Arrays.toString(array));
         if(array.length > 1) {
+            System.out.println("Splitting " + Arrays.toString(array));
             int mid = array.length / 2;
             int[] left = Arrays.copyOfRange(array, 0, mid);
             int[] right = Arrays.copyOfRange(array, mid, array.length);
@@ -31,6 +31,9 @@ public class MergeSort {
             int i = 0;
             int j = 0;
             int resultIndex = 0;
+
+            System.out.print("Merging " + Arrays.toString(left) +
+                    " and " + Arrays.toString(right) + " -> ");
 
             while(i < left.length && j < right.length) {
                 if(left[i] < right[j]) {
@@ -54,9 +57,9 @@ public class MergeSort {
                 j++;
                 resultIndex++;
             }
-        }
 
-        System.out.println("Merging " + Arrays.toString(array));
+            System.out.println(Arrays.toString(array));
+        }
     }
 }
 
