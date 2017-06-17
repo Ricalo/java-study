@@ -8,7 +8,7 @@ public class QuickSort {
             return array;
         }
 
-        // Make a clone of the initial array just to preserve it
+        // Make a clone of the initial array just to preserve the original
         ret = (int[])array.clone();
 
         internalSort(ret, 0, ret.length - 1);
@@ -20,7 +20,7 @@ public class QuickSort {
 
     private static void internalSort(int[] array, int start, int end) {
         System.out.println("Current array: " + Arrays.toString(array));
-        System.out.println("Start: " + start + " End: " + end);
+        System.out.println("  Now sorting: " + Arrays.toString(Arrays.copyOfRange(array, start, end + 1)));
 
         if(end - start > 0) {
             int i = start;
@@ -41,8 +41,9 @@ public class QuickSort {
             }
 
             // Print the next recursive calls
-            System.out.print("Left: " + Arrays.toString(Arrays.copyOfRange(array, start, i)));
-            System.out.println(" - Right: " + Arrays.toString(Arrays.copyOfRange(array, j, end + 1)));
+            System.out.print(Arrays.toString(Arrays.copyOfRange(array, start, i)));
+            System.out.print(" [" + array[i] + "] ");
+            System.out.println(Arrays.toString(Arrays.copyOfRange(array, j + 1, end + 1)));
 
             if(i > 1) {
                 internalSort(array, start, i - 1);
