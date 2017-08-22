@@ -9,7 +9,7 @@ public class MergeSort {
         }
 
         // Make a clone of the initial array just to preserve it
-        ret = (int[])array.clone();
+        ret = array.clone();
 
         internalSort(ret);
 
