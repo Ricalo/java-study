@@ -17,6 +17,12 @@ language.
 
 * Stack
 
+## Run tests
+
+```
+./gradlew clean test
+```
+
 ## Contact
 
 [Twitter](https://twitter.com/ricalo)
