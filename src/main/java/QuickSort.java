@@ -9,7 +9,7 @@ public class QuickSort {
         }
 
         // Make a clone of the initial array just to preserve the original
-        ret = (int[])array.clone();
+        ret = array.clone();
 
         internalSort(ret, 0, ret.length - 1);
 
