@@ -11,45 +11,58 @@ public class QuickSort {
         // Make a clone of the initial array just to preserve the original
         ret = array.clone();
 
+        System.out.println("     Original: " + Arrays.toString(array));
         internalSort(ret, 0, ret.length - 1);
-
-        System.out.println("Original: " + Arrays.toString(array));
         System.out.println("  Sorted: " + Arrays.toString(ret));
         return ret;
     }
 
     private static void internalSort(int[] array, int start, int end) {
-        System.out.println("Current array: " + Arrays.toString(array));
-        System.out.println("  Now sorting: " + Arrays.toString(Arrays.copyOfRange(array, start, end + 1)));
-
         if(end - start > 0) {
-            int i = start;
-            int j = end;
+            int current = start;
+            int wall = start;
+            int pivot = end;
 
-            while(j > i) {
-                if(array[j] < array[j-1]) {
-                    int temp = array[j];
-                    array[j] = array[j-1];
-                    array[j-1] = temp;
-                    j = j - 1;
+            System.out.print("  Now sorting: ");
+            String pad = "";
+            for(int i = 0; i < start; i++)
+                pad = pad + "   ";
+            System.out.print(pad + Arrays.toString(Arrays.copyOfRange(array, start, end)));
+            System.out.println("[" + array[pivot] + "]");
+
+            while(current < pivot) {
+                if(array[current] >= array[pivot]) {
+                    current = current + 1;
                 } else {
-                    int temp = array[i];
-                    array[i] = array[j-1];
-                    array[j-1] = temp;
-                    i = i + 1;
+                    int temp = array[current];
+                    array[current] = array[wall];
+                    array[wall] = temp;
+                    wall = wall + 1;
+                    current = current + 1;
                 }
             }
 
+            int temp = array[pivot];
+            array[pivot] = array[wall];
+            array[wall] = temp;
+
             // Print the next recursive calls
-            System.out.print(Arrays.toString(Arrays.copyOfRange(array, start, i)));
-            System.out.print(" [" + array[i] + "] ");
-            System.out.println(Arrays.toString(Arrays.copyOfRange(array, j + 1, end + 1)));
+            System.out.print("       Result: ");
+            int[] left  = Arrays.copyOfRange(array, start, wall);
+            int[] right = Arrays.copyOfRange(array, wall + 1, end + 1);
+            System.out.print(pad);
+            if(left.length > 0)
+                System.out.print(Arrays.toString(left));
+            System.out.print("[" + array[wall] + "]");
+            if(right.length > 0)
+                System.out.println(Arrays.toString(right));
+            System.out.println();
 
-            if(i > 1) {
-                internalSort(array, start, i - 1);
-            }
+            if(wall - start > 1)
+                internalSort(array, start, wall - 1);
+            if(end - wall > 1)
+                internalSort(array, wall + 1, end);
 
-            internalSort(array, j + 1, end);
         }
     }
 }

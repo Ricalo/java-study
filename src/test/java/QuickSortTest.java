@@ -57,5 +57,14 @@ public class QuickSortTest {
         assertTrue(sortedData[0] == -5);
         assertTrue(sortedData[4] == -1);
     }
+
+    @Test
+    public void testSplitMiddle() {
+        int[] data = {-4, -3, -5, 2, 1, 8, 0};
+        int[] sortedData = QuickSort.sort(data);
+
+        assertTrue(sortedData[0] == -5);
+        assertTrue(sortedData[6] == 8);
+    }
 }
 
