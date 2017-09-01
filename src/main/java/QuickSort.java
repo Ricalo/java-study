@@ -22,17 +22,17 @@ public class QuickSort {
         int wall = start;
         int pivot = end;
 
-        System.out.print("Now sorting: ");
-        String pad = "";
-        for(int i = 0; i < start; i++)
-            if(array[i] >= 0)
-                pad = pad + "   ";
-            else
-                pad = pad + "    ";
-        System.out.print(pad + Arrays.toString(Arrays.copyOfRange(array, start, end)));
-        System.out.println("[" + array[pivot] + "]");
+        if(end - start > 1) {
+            System.out.print("Now sorting: ");
+            String pad = "";
+            for(int i = 0; i < start; i++)
+                if(array[i] >= 0)
+                    pad = pad + "   ";
+                else
+                    pad = pad + "    ";
+            System.out.print(pad + Arrays.toString(Arrays.copyOfRange(array, start, end)));
+            System.out.println("[" + array[pivot] + "]");
 
-        if(end - start > 0) {
             while(current < pivot) {
                 if(array[current] >= array[pivot]) {
                     current = current + 1;
@@ -61,10 +61,8 @@ public class QuickSort {
                 System.out.print(Arrays.toString(right));
             System.out.println();
 
-            if(wall - start > 1)
-                internalSort(array, start, wall - 1);
-            if(end - wall > 1)
-                internalSort(array, wall + 1, end);
+            internalSort(array, start, wall - 1);
+            internalSort(array, wall + 1, end);
 
         }
     }
