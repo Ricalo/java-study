@@ -54,7 +54,7 @@ public class QuickSort {
         StringBuilder sb = new StringBuilder();
         sb.append("Now sorting: ");
         sb.append(getPaddingForArray(array, start) + Arrays.toString(Arrays.copyOfRange(array, start, end)));
-        sb.append("¿" + array[pivot] + "?");
+        sb.append(" " + array[pivot] + "←");
 
         return sb.toString();
     }
