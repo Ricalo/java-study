@@ -11,25 +11,28 @@ public class QuickSort {
         // Make a clone of the initial array just to preserve the original
         ret = array.clone();
 
-        System.out.println("     Original: " + Arrays.toString(array));
+        System.out.println("      Input: " + Arrays.toString(array));
         internalSort(ret, 0, ret.length - 1);
-        System.out.println("  Sorted: " + Arrays.toString(ret));
+        System.out.println("     Output: " + Arrays.toString(ret));
         return ret;
     }
 
     private static void internalSort(int[] array, int start, int end) {
-        if(end - start > 0) {
-            int current = start;
-            int wall = start;
-            int pivot = end;
+        int current = start;
+        int wall = start;
+        int pivot = end;
 
-            System.out.print("  Now sorting: ");
-            String pad = "";
-            for(int i = 0; i < start; i++)
+        System.out.print("Now sorting: ");
+        String pad = "";
+        for(int i = 0; i < start; i++)
+            if(array[i] >= 0)
                 pad = pad + "   ";
-            System.out.print(pad + Arrays.toString(Arrays.copyOfRange(array, start, end)));
-            System.out.println("[" + array[pivot] + "]");
+            else
+                pad = pad + "    ";
+        System.out.print(pad + Arrays.toString(Arrays.copyOfRange(array, start, end)));
+        System.out.println("[" + array[pivot] + "]");
 
+        if(end - start > 0) {
             while(current < pivot) {
                 if(array[current] >= array[pivot]) {
                     current = current + 1;
@@ -47,15 +50,15 @@ public class QuickSort {
             array[wall] = temp;
 
             // Print the next recursive calls
-            System.out.print("       Result: ");
+            System.out.print("     Result: ");
             int[] left  = Arrays.copyOfRange(array, start, wall);
             int[] right = Arrays.copyOfRange(array, wall + 1, end + 1);
             System.out.print(pad);
             if(left.length > 0)
                 System.out.print(Arrays.toString(left));
-            System.out.print("[" + array[wall] + "]");
+            System.out.print("<" + array[wall] + "<");
             if(right.length > 0)
-                System.out.println(Arrays.toString(right));
+                System.out.print(Arrays.toString(right));
             System.out.println();
 
             if(wall - start > 1)
