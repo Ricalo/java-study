@@ -19,7 +19,7 @@ public class QuickSort {
     }
 
     private static void internalSort(int[] array, int start, int end) {
-        if(end - start > 1) {
+        if(end - start > 0) {
             int current = start;
             int wall = start;
             int pivot = end;
