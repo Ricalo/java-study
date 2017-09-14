@@ -20,7 +20,7 @@ language.
 ## Run tests
 
 ```
-./gradlew clean test
+./gradlew clean build test --info
 ```
 
 ## Contact
