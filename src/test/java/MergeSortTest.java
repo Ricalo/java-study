@@ -1,13 +1,13 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class MergeSortTest {
+public class MergeSortTest extends BaseArraySortTest {
     @Test
     public void testAlreadySorted() {
         int[] data = {1, 2, 3, 4};
         int[] sortedData = MergeSort.sort(data);
-        assertTrue(sortedData[0] == 1);
-        assertTrue(sortedData[3] == 4);
+
+        assertTrue(isSorted(sortedData));
     }
 
     @Test
@@ -15,29 +15,31 @@ public class MergeSortTest {
         int[] data = {4, 3, 2, 1};
         int[] sortedData = MergeSort.sort(data);
 
-        assertTrue(sortedData[0] == 1);
-        assertTrue(sortedData[3] == 4);
+        assertTrue(isSorted(sortedData));
     }
 
     @Test
     public void testEmpty() {
         int[] data = {};
         int[] sortedData = MergeSort.sort(data);
-        assertTrue(sortedData.length == 0);
+
+        assertTrue(isSorted(sortedData));
     }
 
     @Test
     public void testSameNumber() {
         int[] data = {1, 1, 1, 1};
         int[] sortedData = MergeSort.sort(data);
-        assertTrue(sortedData.length == 4);
+
+        assertTrue(isSorted(sortedData));
     }
 
     @Test
     public void testOneElement() {
         int[] data = {672};
         int[] sortedData = MergeSort.sort(data);
-        assertTrue(sortedData.length == 1);
+
+        assertTrue(isSorted(sortedData));
     }
 
     @Test
@@ -45,8 +47,7 @@ public class MergeSortTest {
         int[] data = {4, 3, 5, 2, 1};
         int[] sortedData = MergeSort.sort(data);
 
-        assertTrue(sortedData[0] == 1);
-        assertTrue(sortedData[4] == 5);
+        assertTrue(isSorted(sortedData));
     }
 
     @Test
@@ -54,8 +55,7 @@ public class MergeSortTest {
         int[] data = {-4, -3, -5, -2, -1};
         int[] sortedData = MergeSort.sort(data);
 
-        assertTrue(sortedData[0] == -5);
-        assertTrue(sortedData[4] == -1);
+        assertTrue(isSorted(sortedData));
     }
 }
 
