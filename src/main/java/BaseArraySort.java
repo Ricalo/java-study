@@ -14,5 +14,16 @@ public abstract class BaseArraySort {
 
         return ret;
     }
+
+    protected String getPaddingForArray(int[] array, int start){
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < start; i++)
+            if(array[i] >= 0)
+                sb.append("   ");
+            else
+                sb.append("    ");
+
+        return sb.toString();
+    }
 }
 

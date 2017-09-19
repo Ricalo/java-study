@@ -34,7 +34,7 @@ public class QuickSort extends BaseArraySort {
         }
     }
 
-    private static String formatArrayStatusBeforeIteration(int[] array, int start, int end, int pivot){
+    private String formatArrayStatusBeforeIteration(int[] array, int start, int end, int pivot){
         StringBuilder sb = new StringBuilder();
         sb.append("Now sorting: ");
         sb.append(getPaddingForArray(array, start) + Arrays.toString(Arrays.copyOfRange(array, start, end)));
@@ -43,7 +43,7 @@ public class QuickSort extends BaseArraySort {
         return sb.toString();
     }
 
-    private static String formatArrayStatusAfterIteration(int[] array, int start, int end, int wall){
+    private String formatArrayStatusAfterIteration(int[] array, int start, int end, int wall){
         StringBuilder sb = new StringBuilder();
         sb.append("     Result: ");
         sb.append(getPaddingForArray(array, start));
@@ -56,17 +56,6 @@ public class QuickSort extends BaseArraySort {
         sb.append(array[wall]);
         if(right.length > 0)
             sb.append("<" + Arrays.toString(right));
-
-        return sb.toString();
-    }
-
-    private static String getPaddingForArray(int[] array, int start){
-        StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < start; i++)
-            if(array[i] >= 0)
-                sb.append("   ");
-            else
-                sb.append("    ");
 
         return sb.toString();
     }
