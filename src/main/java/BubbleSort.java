@@ -3,16 +3,27 @@ import java.util.Arrays;
 
 public class BubbleSort {
     public static int[] sort(@NonNull int[] array) {
-        for(int i = 0; i < array.length; i++) {
-            for(int j = array.length - 1; j > i; j--) {
-                if(array[j] < array[j - 1]) {
+        if(array.length < 2) {
+            return array;
+        }
+
+        // Make a clone of the initial array to preserve the original order
+        int[] ret = array.clone();
+
+        System.out.println("      Input: " + Arrays.toString(array));
+
+        for(int i = 0; i < ret.length; i++) {
+            for(int j = ret.length - 1; j > i; j--) {
+                if(ret[j] < ret[j - 1]) {
                     int temp;
-                    temp = array[j];
-                    array[j] = array[j - 1];
-                    array[j - 1] = temp;
+                    temp = ret[j];
+                    ret[j] = ret[j - 1];
+                    ret[j - 1] = temp;
                 }
             }
         }
-        return array;
+
+        System.out.println("     Output: " + Arrays.toString(ret));
+        return ret;
     }
 }
