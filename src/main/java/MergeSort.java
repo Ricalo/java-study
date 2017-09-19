@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class MergeSort extends BaseArraySort {
     void internalSort(int[] array, int start, int end) {
         if(array.length > 1) {
-            System.out.println("Splitting " + Arrays.toString(array));
+            System.out.println("  Splitting: " + Arrays.toString(array));
             int mid = array.length / 2;
             int[] left = Arrays.copyOfRange(array, 0, mid);
             int[] right = Arrays.copyOfRange(array, mid, array.length);
@@ -15,7 +15,7 @@ public class MergeSort extends BaseArraySort {
             int j = 0;
             int resultIndex = 0;
 
-            System.out.print("Merging " + Arrays.toString(left) +
+            System.out.print("    Merging: " + Arrays.toString(left) +
                     " and " + Arrays.toString(right) + " -> ");
 
             while(i < left.length && j < right.length) {
