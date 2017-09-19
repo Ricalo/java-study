@@ -1,4 +1,18 @@
-public class BaseArraySortTest {
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+
+public abstract class BaseArraySortTest {
+    BaseArraySort _arraySort;
+
+    abstract BaseArraySort getArraySort();
+
+    @Before
+    public void initializeArraySort() {
+        _arraySort = getArraySort();
+    }
+
     protected boolean isSorted(int[] array) {
         if(array.length < 2) {
             return true;
@@ -10,6 +24,70 @@ public class BaseArraySortTest {
             }
             return true;
         }
+    }
+
+    @Test
+    public void testAlreadySorted() {
+        int[] data = {1, 2, 3, 4};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testWorstScenario() {
+        int[] data = {4, 3, 2, 1};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testEmpty() {
+        int[] data = {};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testSameNumber() {
+        int[] data = {1, 1, 1, 1};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testOneElement() {
+        int[] data = {672};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testOddNumber() {
+        int[] data = {4, 3, 5, 2, 1};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testNegative() {
+        int[] data = {-4, -3, -5, -2, -1};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
+    }
+
+    @Test
+    public void testSplitMiddle() {
+        int[] data = {-4, -3, -5, 2, 1, 8, 0};
+        int[] sortedData = _arraySort.sort(data);
+
+        assertTrue(isSorted(sortedData));
     }
 }
 

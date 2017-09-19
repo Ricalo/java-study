@@ -1,24 +1,8 @@
 import java.util.Arrays;
 import java.lang.StringBuilder;
 
-public class QuickSort {
-    private static int[] ret;
-
-    public static int[] sort(int[] array) {
-        if(array.length < 2) {
-            return array;
-        }
-
-        // Make a clone of the initial array just to preserve the original
-        ret = array.clone();
-
-        System.out.println("      Input: " + Arrays.toString(array));
-        internalSort(ret, 0, ret.length - 1);
-        System.out.println("     Output: " + Arrays.toString(ret));
-        return ret;
-    }
-
-    private static void internalSort(int[] array, int start, int end) {
+public class QuickSort extends BaseArraySort {
+    void internalSort(int[] array, int start, int end) {
         if(end - start > 0) {
             int current = start;
             int wall = start;

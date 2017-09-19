@@ -1,32 +1,15 @@
 import java.util.Arrays;
 
-public class MergeSort {
-    private static int[] ret;
-
-    public static int[] sort(int[] array) {
-        if(array.length < 2) {
-            return array;
-        }
-
-        // Make a clone of the initial array just to preserve it
-        ret = array.clone();
-
-        internalSort(ret);
-
-        System.out.println("Original: " + Arrays.toString(array));
-        System.out.println("  Sorted: " + Arrays.toString(ret));
-        return ret;
-    }
-
-    private static void internalSort(int[] array) {
+public class MergeSort extends BaseArraySort {
+    void internalSort(int[] array, int start, int end) {
         if(array.length > 1) {
             System.out.println("Splitting " + Arrays.toString(array));
             int mid = array.length / 2;
             int[] left = Arrays.copyOfRange(array, 0, mid);
             int[] right = Arrays.copyOfRange(array, mid, array.length);
 
-            internalSort(left);
-            internalSort(right);
+            internalSort(left, 0, left.length - 1);
+            internalSort(right, 0, right.length - 1);
 
             int i = 0;
             int j = 0;
