@@ -21,5 +21,30 @@ public class MathTest {
     public void testFactorialNegative() {
         Math.factorial(-1);
     }
+
+    @Test
+    public void testPowerRecursivePositiveBaseZeroPower() {
+        assertEquals(1, Math.toPowerRecursive(1, 0), 0);
+    }
+
+    @Test
+    public void testPowerRecursivePositiveBasePositivePower() {
+        assertEquals(8, Math.toPowerRecursive(2, 3), 0);
+    }
+
+    @Test
+    public void testPowerRecursiveZeroBaseZeroPower() {
+        assertEquals(1, Math.toPowerRecursive(0, 0), 0);
+    }
+
+    @Test
+    public void testPowerRecursiveZeroBasePositivePower() {
+        assertEquals(0, Math.toPowerRecursive(0, 1), 0);
+    }
+
+    @Test
+    public void testPowerRecursiveNegativeBasePositiveOddPower() {
+        assertEquals(-8, Math.toPowerRecursive(-2, 3), 0);
+    }
 }
 

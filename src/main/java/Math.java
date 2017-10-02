@@ -11,5 +11,14 @@ public class Math {
             return factorial(value - 1) * value;
         }
     }
+
+    public static double toPowerRecursive(@NonNull long base,
+            @NonNull int power) {
+        if(power == 0) {
+            return 1;
+        } else {
+            return base * toPowerRecursive(base, power - 1);
+        }
+    }
 }
 
