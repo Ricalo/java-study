@@ -46,5 +46,35 @@ public class MathTest {
     public void testPowerRecursiveNegativeBasePositiveOddPower() {
         assertEquals(-8, Math.toPowerRecursive(-2, 3), 0);
     }
+
+    @Test
+    public void testPowerIterativePositiveBaseZeroPower() {
+        assertEquals(1, Math.toPowerIterative(1, 0), 0);
+    }
+
+    @Test
+    public void testPowerIterativePositiveBasePositivePower() {
+        assertEquals(8, Math.toPowerIterative(2, 3), 0);
+    }
+
+    @Test
+    public void testPowerIterativeZeroBaseZeroPower() {
+        assertEquals(1, Math.toPowerIterative(0, 0), 0);
+    }
+
+    @Test
+    public void testPowerIterativeZeroBasePositivePower() {
+        assertEquals(0, Math.toPowerIterative(0, 1), 0);
+    }
+
+    @Test
+    public void testPowerIterativeNegativeBasePositiveOddPower() {
+        assertEquals(-8, Math.toPowerIterative(-2, 3), 0);
+    }
+
+    @Test
+    public void testPowerIterativeOverflow() {
+        assertEquals(Double.MAX_VALUE, Math.toPowerIterative(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
+    }
 }
 
