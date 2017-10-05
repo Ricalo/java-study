@@ -47,6 +47,11 @@ public class MathTest {
         assertEquals(-8, Math.toPowerRecursive(-2, 3), 0);
     }
 
+    @Test(expected=StackOverflowError.class)
+    public void testPowerRecursive() {
+        Math.toPowerRecursive(Long.MAX_VALUE, Integer.MAX_VALUE);
+    }
+
     @Test
     public void testPowerIterativePositiveBaseZeroPower() {
         assertEquals(1, Math.toPowerIterative(1, 0), 0);
@@ -73,8 +78,9 @@ public class MathTest {
     }
 
     @Test
-    public void testPowerIterativeOverflow() {
-        assertEquals(Double.MAX_VALUE, Math.toPowerIterative(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
+    public void testPowerIterativeInfinity() {
+        assertEquals(Double.POSITIVE_INFINITY,
+                Math.toPowerIterative(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
     }
 }
 
