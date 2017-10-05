@@ -14,6 +14,8 @@ public class Math {
     public static double toPowerRecursive(@NonNull long base, @NonNull int power) {
         if(power == 0) {
             return 1;
+        } else if (power < 0) {
+            return 1/toPowerRecursive(base, power * -1);
         } else {
             return base * toPowerRecursive(base, power - 1);
         }
@@ -21,10 +23,21 @@ public class Math {
 
     public static double toPowerIterative(@NonNull long base, @NonNull int power) {
         double ret=1;
+        boolean negativePower = power < 0;
+
+        if(negativePower) {
+            power = power * -1;
+        }
+
         for (int i = 0; i < power; i++) {
             ret = ret * base;
         }
-        return ret;
+
+        if(negativePower) {
+            return 1/ret;
+        } else {
+            return ret;
+        }
     }
 }
 

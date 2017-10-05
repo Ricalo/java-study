@@ -53,6 +53,11 @@ public class MathTest {
     }
 
     @Test
+    public void testPowerRecursivePositiveBaseNegativePower() {
+        assertEquals(0.125, Math.toPowerRecursive(2, -3), 0);
+    }
+
+    @Test
     public void testPowerIterativePositiveBaseZeroPower() {
         assertEquals(1, Math.toPowerIterative(1, 0), 0);
     }
@@ -81,6 +86,11 @@ public class MathTest {
     public void testPowerIterativeInfinity() {
         assertEquals(Double.POSITIVE_INFINITY,
                 Math.toPowerIterative(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
+    }
+
+    @Test
+    public void testPowerIterativePositiveBaseNegativePower() {
+        assertEquals(0.125, Math.toPowerIterative(2, -3), 0);
     }
 }
 
