@@ -10,6 +10,7 @@
 plugins {
     id "org.gradle.java"
     id "com.scuilion.syntastic" version "0.3.8"
+    id 'findbugs'
 }
 
 // Apply the java plugin to add support for Java
@@ -45,3 +46,9 @@ jacocoTestReport {
     }
 }
 
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
