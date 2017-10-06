@@ -28,8 +28,18 @@ public class MathTest {
     }
 
     @Test
-    public void testPowerRecursivePositiveBasePositivePower() {
+    public void testPowerRecursivePositiveBasePositivePower01() {
         assertEquals(8, Math.toPowerRecursive(2, 3), 0);
+    }
+
+    @Test
+    public void testPowerRecursivePositiveBasePositivePower02() {
+        assertEquals(243, Math.toPowerRecursive(3, 5), 0);
+    }
+
+    @Test
+    public void testPowerRecursivePositiveBasePositivePower03() {
+        assertEquals(59049, Math.toPowerRecursive(3, 10), 0);
     }
 
     @Test
@@ -63,8 +73,18 @@ public class MathTest {
     }
 
     @Test
-    public void testPowerIterativePositiveBasePositivePower() {
+    public void testPowerIterativePositiveBasePositivePower01() {
         assertEquals(8, Math.toPowerIterative(2, 3), 0);
+    }
+
+    @Test
+    public void testPowerIterativePositiveBasePositivePower02() {
+        assertEquals(243, Math.toPowerIterative(3, 5), 0);
+    }
+
+    @Test
+    public void testPowerIterativePositiveBasePositivePower03() {
+        assertEquals(59049, Math.toPowerIterative(3, 10), 0);
     }
 
     @Test

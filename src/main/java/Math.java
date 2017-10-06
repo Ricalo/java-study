@@ -18,7 +18,7 @@ public class Math {
             return 1/toPowerRecursive(base, power * -1);
         } else {
             if(power % 2 == 0) {
-                return base * base * toPowerRecursive(base, power / 2 - 1);
+                return toPowerRecursive(base * base, power / 2);
             } else {
                 return base * toPowerRecursive(base, power - 1);
             }
@@ -33,12 +33,14 @@ public class Math {
             power = power * -1;
         }
 
-        for (int i = 0; i < power; i++) {
+        int i = 0;
+        while (i < power) {
             if(power % 2 == 0) {
                 power = power / 2;
-                ret = ret * base * base;
+                base = base * base;
             } else {
                 ret = ret * base;
+                i++;
             }
         }
 
