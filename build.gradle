@@ -11,6 +11,7 @@ plugins {
     id "org.gradle.java"
     id "com.scuilion.syntastic" version "0.3.8"
     id 'findbugs'
+    id 'nebula.lint' version '8.3.1'
 }
 
 // Apply the java plugin to add support for Java
@@ -52,3 +53,5 @@ tasks.withType(FindBugs) {
         html.enabled = true
     }
 }
+
+gradleLint.rules = ['all-dependency']
