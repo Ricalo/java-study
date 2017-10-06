@@ -15,7 +15,7 @@ public class Math {
         if(power == 0) {
             return 1;
         } else if (power < 0) {
-            return 1/toPowerRecursive(base, power * -1);
+            return 1 / toPowerRecursive(base, power * -1);
         } else {
             if(power % 2 == 0) {
                 return toPowerRecursive(base * base, power / 2);
@@ -44,10 +44,6 @@ public class Math {
             }
         }
 
-        if(negativePower) {
-            return 1/ret;
-        } else {
-            return ret;
-        }
+        return negativePower ? 1 / ret : ret;
     }
 }
