@@ -13,6 +13,7 @@ plugins {
     id 'findbugs'
     id 'nebula.lint' version '8.3.1'
     id 'pmd'
+    id 'checkstyle'
 }
 
 // Apply the java plugin to add support for Java
@@ -89,4 +90,17 @@ pmd {
     'java-unnecessary',
     'java-unusedcode'
   ]
+}
+
+tasks.withType(Checkstyle) {
+    ignoreFailures = true
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
+checkstyle {
+    configFile = rootProject.file('google_checks.xml')
+    toolVersion '8.3'
 }
