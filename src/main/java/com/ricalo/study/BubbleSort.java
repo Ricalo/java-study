@@ -4,7 +4,8 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
 public class BubbleSort extends AbstractArraySort {
-    public void internalSort(@NonNull int[] array, int start, int end) {
+    public void internalSort(@NonNull final int start, @NonNull final int end,
+            @NonNull final int... array) {
         if(array.length < 2) {
             return;
         }

@@ -2,16 +2,19 @@ package com.ricalo.study;
 
 import java.util.Arrays;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 public class MergeSort extends AbstractArraySort {
-    void internalSort(int[] array, int start, int end) {
+    void internalSort(@NonNull final int start, @NonNull final int end,
+            @NonNull final int... array) {
         if(array.length > 1) {
             System.out.println("  Splitting: " + Arrays.toString(array));
             int mid = array.length / 2;
             int[] left = Arrays.copyOfRange(array, 0, mid);
             int[] right = Arrays.copyOfRange(array, mid, array.length);
 
-            internalSort(left, 0, left.length - 1);
-            internalSort(right, 0, right.length - 1);
+            internalSort(0, left.length - 1, left);
+            internalSort(0, right.length - 1, right);
 
             int i = 0;
             int j = 0;
