@@ -1,7 +1,7 @@
 import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
-public class InsertionSort extends BaseArraySort {
+public class InsertionSort extends AbstractArraySort {
     void internalSort(@NonNull int[] array, int start, int end) {
         if(array.length < 2) {
             return;
@@ -21,4 +21,3 @@ public class InsertionSort extends BaseArraySort {
         }
     }
 }
-

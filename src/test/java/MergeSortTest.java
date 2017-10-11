@@ -1,5 +1,5 @@
-public class MergeSortTest extends BaseArraySortTest {
-    BaseArraySort getArraySort() {
+public class MergeSortTest extends AbstractArraySortTest {
+    AbstractArraySort getArraySort() {
         return new MergeSort();
     }
 }

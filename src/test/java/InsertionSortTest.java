@@ -1,5 +1,5 @@
-public class InsertionSortTest extends BaseArraySortTest {
-    BaseArraySort getArraySort() {
+public class InsertionSortTest extends AbstractArraySortTest {
+    AbstractArraySort getArraySort() {
         return new InsertionSort();
     }
 }

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.lang.StringBuilder;
 
-public class QuickSort extends BaseArraySort {
+public class QuickSort extends AbstractArraySort {
     void internalSort(int[] array, int start, int end) {
         if(end - start > 0) {
             int current = start;

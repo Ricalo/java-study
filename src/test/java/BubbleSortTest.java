@@ -1,5 +1,5 @@
-public class BubbleSortTest extends BaseArraySortTest {
-    BaseArraySort getArraySort() {
+public class BubbleSortTest extends AbstractArraySortTest {
+    AbstractArraySort getArraySort() {
         return new BubbleSort();
     }
 }

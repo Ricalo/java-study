@@ -1,7 +1,7 @@
 import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
-public abstract class BaseArraySort {
+public abstract class AbstractArraySort {
     abstract void internalSort(@NonNull int[] array, int start, int end);
 
     public int[] sort(@NonNull int[] array) {
@@ -26,4 +26,3 @@ public abstract class BaseArraySort {
         return sb.toString();
     }
 }
-

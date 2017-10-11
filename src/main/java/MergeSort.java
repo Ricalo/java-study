@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MergeSort extends BaseArraySort {
+public class MergeSort extends AbstractArraySort {
     void internalSort(int[] array, int start, int end) {
         if(array.length > 1) {
             System.out.println("  Splitting: " + Arrays.toString(array));

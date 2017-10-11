@@ -3,10 +3,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 
-public abstract class BaseArraySortTest {
-    BaseArraySort _arraySort;
+public abstract class AbstractArraySortTest {
+    AbstractArraySort _arraySort;
 
-    abstract BaseArraySort getArraySort();
+    abstract AbstractArraySort getArraySort();
 
     @Before
     public void initializeArraySort() {

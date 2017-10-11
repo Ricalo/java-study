@@ -1,5 +1,5 @@
-public class QuickSortTest extends BaseArraySortTest {
-    BaseArraySort getArraySort() {
+public class QuickSortTest extends AbstractArraySortTest {
+    AbstractArraySort getArraySort() {
         return new QuickSort();
     }
 }
