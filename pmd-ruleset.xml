@@ -19,6 +19,7 @@
     <rule ref="rulesets/java/controversial.xml" >
         <exclude name="AtLeastOneConstructor" />
         <exclude name="DefaultPackage" />
+        <exclude name="OnlyOneReturn" />
     </rule>
     <rule ref="rulesets/java/coupling.xml" />
     <rule ref="rulesets/java/design.xml" />
