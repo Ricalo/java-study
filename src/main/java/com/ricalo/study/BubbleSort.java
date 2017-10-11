@@ -5,7 +5,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 public class BubbleSort extends AbstractArraySort {
     public void internalSort(@NonNull final int start, @NonNull final int end,
             @NonNull final int... array) {
-        if(array.length == BASE_CASE) {
+        if(array.length == 1) {
             return;
         }
 

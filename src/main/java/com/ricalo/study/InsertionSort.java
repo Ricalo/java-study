@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class InsertionSort extends AbstractArraySort {
     void internalSort(@NonNull final int start, @NonNull final int end,
             @NonNull final int... array) {
-        if(array.length == BASE_CASE) {
+        if(array.length == 1) {
             return;
         }
 

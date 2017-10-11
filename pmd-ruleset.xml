@@ -20,6 +20,7 @@
         <exclude name="AtLeastOneConstructor" />
         <exclude name="DefaultPackage" />
         <exclude name="OnlyOneReturn" />
+        <exclude name="AvoidLiteralsInIfCondition" />
     </rule>
     <rule ref="rulesets/java/coupling.xml" />
     <rule ref="rulesets/java/design.xml" />
