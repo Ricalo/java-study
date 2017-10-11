@@ -1,3 +1,5 @@
+package com.ricalo.study;
+
 import java.util.Arrays;
 
 public class MergeSort extends AbstractArraySort {

@@ -1,3 +1,5 @@
+package com.ricalo.study;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -1,3 +1,5 @@
+package com.ricalo.study;
+
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class Math {
