@@ -4,6 +4,8 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import java.util.Arrays;
 
 public abstract class AbstractArraySort {
+    static final int BASE_CASE = 1;
+
     abstract void internalSort(@NonNull final int start, @NonNull final int end,
             @NonNull final int... array);
 

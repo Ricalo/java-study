@@ -1,12 +1,11 @@
 package com.ricalo.study;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
-import java.util.Arrays;
 
 public class BubbleSort extends AbstractArraySort {
     public void internalSort(@NonNull final int start, @NonNull final int end,
             @NonNull final int... array) {
-        if(array.length < 2) {
+        if(array.length == BASE_CASE) {
             return;
         }
 
