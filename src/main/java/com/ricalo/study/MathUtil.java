@@ -2,8 +2,8 @@ package com.ricalo.study;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-public final class Math {
-    private Math() {
+public final class MathUtil {
+    private MathUtil() {
         throw new AssertionError("Instantiating a utility class");
     }
 
