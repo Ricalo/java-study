@@ -1,5 +1,7 @@
 package com.ricalo.study;
 
+import java.util.EmptyStackException;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,7 +18,7 @@ public class StackTest {
         );
     }
     
-    @Test(expected = NullPointerException.class)
+    @Test(expected = EmptyStackException.class)
     public void testPopEmptyStack() {
         Stack stack = new Stack();
         stack.pop();

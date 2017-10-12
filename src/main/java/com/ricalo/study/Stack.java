@@ -1,22 +1,24 @@
 package com.ricalo.study;
 
+import java.util.EmptyStackException;
+
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class Stack {
-    ListElement head = null;
+    ListElement head;
 
     public int pop() {
         if(head == null) {
-            throw new NullPointerException("The stack is empty");
+            throw new EmptyStackException();
         } else {
-            int temp = head.data;
+            final int temp = head.data;
             head = head.next;
             return temp;
         }
     }
 
-    public void push(@NonNull int data) {
-        ListElement newElement = new ListElement();
+    public void push(@NonNull final int data) {
+        final ListElement newElement = new ListElement();
         newElement.data = data;
 
         newElement.next = head;
@@ -26,13 +28,13 @@ public class Stack {
     @Override
     public String toString() {
         ListElement current = head;
-        String returnValue = "";
+        final StringBuilder stringBuilder = new StringBuilder();
         while(current != null) {
-            returnValue = returnValue + current.data + "\n";
+            stringBuilder.append(current.data).append('\n');
             current = current.next;
         }
 
-        return returnValue;
+        return stringBuilder.toString();
     }
 }
 
