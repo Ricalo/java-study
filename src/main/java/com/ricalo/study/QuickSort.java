@@ -1,7 +1,6 @@
 package com.ricalo.study;
 
 import java.util.Arrays;
-import java.lang.StringBuilder;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
@@ -11,7 +10,7 @@ public class QuickSort extends AbstractArraySort {
         if(end - start > 0) {
             int current = start;
             int wall = start;
-            int pivot = end;
+            final int pivot = end;
 
             System.out.println(formatArrayStatusBeforeIteration(start, end, pivot, array));
 
@@ -19,7 +18,7 @@ public class QuickSort extends AbstractArraySort {
                 if(array[current] >= array[pivot]) {
                     current = current + 1;
                 } else {
-                    int temp = array[current];
+                    final int temp = array[current];
                     array[current] = array[wall];
                     array[wall] = temp;
                     wall = wall + 1;
@@ -27,7 +26,7 @@ public class QuickSort extends AbstractArraySort {
                 }
             }
 
-            int temp = array[pivot];
+            final int temp = array[pivot];
             array[pivot] = array[wall];
             array[wall] = temp;
 
@@ -39,30 +38,37 @@ public class QuickSort extends AbstractArraySort {
         }
     }
 
-    private String formatArrayStatusBeforeIteration(int start, int end, int pivot, int... array){
-        StringBuilder sb = new StringBuilder();
-        sb.append("Now sorting: ");
-        sb.append(getPaddingForArray(start, array) + Arrays.toString(Arrays.copyOfRange(array, start, end)));
-        sb.append(" " + array[pivot] + "←");
+    private String formatArrayStatusBeforeIteration(@NonNull final int start,
+            @NonNull final int end, @NonNull final int pivot, @NonNull final int... array){
+        final StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Now sorting: ")
+            .append(getPaddingForArray(start, array))
+            .append(Arrays.toString(Arrays.copyOfRange(array, start, end)))
+            .append(" " + array[pivot] + "←");
 
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
-    private String formatArrayStatusAfterIteration(int start, int end, int wall, int... array){
-        StringBuilder sb = new StringBuilder();
-        sb.append("     Result: ");
-        sb.append(getPaddingForArray(start, array));
-        int[] left  = Arrays.copyOfRange(array, start, wall);
-        int[] right = Arrays.copyOfRange(array, wall + 1, end + 1);
-        if(left.length > 0)
-            sb.append(Arrays.toString(left) + "<");
-        else
-            sb.append(" ");
-        sb.append(array[wall]);
-        if(right.length > 0)
-            sb.append("<" + Arrays.toString(right));
+    private String formatArrayStatusAfterIteration(@NonNull final int start, @NonNull final int end,
+            @NonNull final int wall, @NonNull final int... array){
+        final StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("     Result: ")
+            .append(getPaddingForArray(start, array));
+        final int[] left  = Arrays.copyOfRange(array, start, wall);
+        final int[] right = Arrays.copyOfRange(array, wall + 1, end + 1);
 
-        return sb.toString();
+        if(left.length > 0) {
+            stringBuilder.append(Arrays.toString(left)).append('<');
+        } else {
+            stringBuilder.append(' ');
+        }
+
+        stringBuilder.append(array[wall]);
+        if(right.length > 0) {
+            stringBuilder.append('<').append(Arrays.toString(right));
+        }
+
+        return stringBuilder.toString();
     }
 }
 
