@@ -9,40 +9,40 @@ public class MergeSort extends AbstractArraySort {
             @NonNull final int... array) {
         if(array.length > 1) {
             System.out.println("  Splitting: " + Arrays.toString(array));
-            int mid = array.length / 2;
-            int[] left = Arrays.copyOfRange(array, 0, mid);
-            int[] right = Arrays.copyOfRange(array, mid, array.length);
+            final int mid = array.length / 2;
+            final int[] left = Arrays.copyOfRange(array, 0, mid);
+            final int[] right = Arrays.copyOfRange(array, mid, array.length);
 
             internalSort(0, left.length - 1, left);
             internalSort(0, right.length - 1, right);
 
-            int i = 0;
-            int j = 0;
+            int leftIndex = 0;
+            int rightIndex = 0;
             int resultIndex = 0;
 
             System.out.print("    Merging: " + Arrays.toString(left) +
                     " and " + Arrays.toString(right) + " -> ");
 
-            while(i < left.length && j < right.length) {
-                if(left[i] < right[j]) {
-                    array[resultIndex] = left[i];
-                    i++;
+            while(leftIndex < left.length && rightIndex < right.length) {
+                if(left[leftIndex] < right[rightIndex]) {
+                    array[resultIndex] = left[leftIndex];
+                    leftIndex++;
                 } else {
-                    array[resultIndex] = right[j];
-                    j++;
+                    array[resultIndex] = right[rightIndex];
+                    rightIndex++;
                 }
                 resultIndex++;
             }
 
-            while(i < left.length) {
-                array[resultIndex] = left[i];
-                i++;
+            while(leftIndex < left.length) {
+                array[resultIndex] = left[leftIndex];
+                leftIndex++;
                 resultIndex++;
             }
 
-            while(j < right.length) {
-                array[resultIndex] = right[j];
-                j++;
+            while(rightIndex < right.length) {
+                array[resultIndex] = right[rightIndex];
+                rightIndex++;
                 resultIndex++;
             }
 
@@ -50,4 +50,3 @@ public class MergeSort extends AbstractArraySort {
         }
     }
 }
-
