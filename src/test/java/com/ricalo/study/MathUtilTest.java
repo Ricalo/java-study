@@ -3,20 +3,21 @@ package com.ricalo.study;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+@SuppressWarnings("PMD.TooManyMethods")
 public class MathUtilTest {
     @Test
     public void testFactorialZero() {
-        assertTrue(MathUtil.factorial(0) == 1);
+        assertEquals(1, MathUtil.factorial(0), 0);
     }
 
     @Test
     public void testFactorialOne() {
-        assertTrue(MathUtil.factorial(1) == 1);
+        assertEquals(1, MathUtil.factorial(1), 0);
     }
 
     @Test
     public void testFactorialEight() {
-        assertTrue(MathUtil.factorial(8) == 40320);
+        assertEquals(40320, MathUtil.factorial(8), 0);
     }
 
     @Test(expected = ArithmeticException.class)
@@ -59,6 +60,7 @@ public class MathUtilTest {
         assertEquals(-8, MathUtil.toPowerRecursive(-2, 3), 0);
     }
 
+    @Test
     public void testPowerRecursiveInfinity() {
         assertEquals(Double.POSITIVE_INFINITY,
                 MathUtil.toPowerRecursive(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
