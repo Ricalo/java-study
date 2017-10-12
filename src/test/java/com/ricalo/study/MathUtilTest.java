@@ -61,9 +61,9 @@ public class MathUtilTest {
     }
 
     @Test
-    public void testPowerRecursiveInfinity() {
-        assertEquals(Double.POSITIVE_INFINITY,
-                MathUtil.toPowerRecursive(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
+    public void testPowerRecursiveBigNumber() {
+        assertEquals(Math.pow(2, 80),
+                MathUtil.toPowerRecursive(2, 80), 0);
     }
 
     @Test
@@ -107,9 +107,9 @@ public class MathUtilTest {
     }
 
     @Test
-    public void testPowerIterativeInfinity() {
-        assertEquals(Double.POSITIVE_INFINITY,
-                MathUtil.toPowerIterative(Long.MAX_VALUE, Integer.MAX_VALUE), 0);
+    public void testPowerIterativeBigNumber() {
+        assertEquals(Math.pow(2, 80),
+                MathUtil.toPowerIterative(2, 80), 0);
     }
 
     @Test

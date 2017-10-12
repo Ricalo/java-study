@@ -17,7 +17,7 @@ public final class MathUtil {
         }
     }
 
-    public static double toPowerRecursive(@NonNull final long base, @NonNull final int power) {
+    public static double toPowerRecursive(@NonNull final double base, @NonNull final double power) {
         if(power == 0) {
             return 1;
         } else if (power < 0) {
@@ -31,11 +31,11 @@ public final class MathUtil {
         }
     }
 
-    public static double toPowerIterative(@NonNull final long base, @NonNull final int power) {
+    public static double toPowerIterative(@NonNull final double base, @NonNull final double power) {
         double ret = 1;
         final boolean negativePower = power < 0;
-        int absolutePower = negativePower ? power * -1 : power;
-        long tempBase = base;
+        double absolutePower = negativePower ? power * -1 : power;
+        double tempBase = base;
 
         int index = 0;
         while (index < absolutePower) {
