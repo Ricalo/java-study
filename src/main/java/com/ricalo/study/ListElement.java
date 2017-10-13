@@ -1,6 +1,6 @@
 package com.ricalo.study;
 
 public class ListElement {
-    ListElement next;
-    int data;
+  ListElement next;
+  int data;
 }
