@@ -23,7 +23,8 @@ public final class MathUtil {
   }
 
   /**
-   * Returns the value of the base elevated to the power using a recursive algorithm.
+   * Returns the value of the base elevated to the power using a recursive
+   * algorithm.
    * @param base  The base value that is elevated to the power.
    * @param power The value to whom the base is elevated to.
    * @return      The value of the base elevated to the power.
@@ -43,7 +44,8 @@ public final class MathUtil {
   }
 
   /**
-   * Returns the value of the base elevated to the power using an iterative algorithm.
+   * Returns the value of the base elevated to the power using an iterative
+   * algorithm.
    * @param base  The base value that is elevated to the power.
    * @param power The value to whom the base is elevated to.
    * @return      The value of the base elevated to the power.

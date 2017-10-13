@@ -9,11 +9,12 @@ public abstract class AbstractArraySort {
           @NonNull final int... array);
 
   /**
-   * Sorts the provided array using the algorithm provided by children classes. The original array
-   * is not modified.
-   * @param array The input array, which is not modified by the sorting algorithm.
-   * @return      An array that contains the same elements in the input array, but sorted from the
-   *              smallest to the highest.
+   * Sorts the provided array using the algorithm provided by children classes.
+   * The original array is not modified.
+   * @param array The input array, which is not modified by the sorting
+   *              algorithm.
+   * @return      An array that contains the same elements in the input array,
+   *              but sorted from the smallest to the highest.
    */
   public int[] sort(@NonNull final int... array) {
     // Make a clone of the initial array just to preserve the original
