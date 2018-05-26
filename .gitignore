@@ -38,6 +38,7 @@ gradle-app.setting
 
 .*.swp
 tags
+.tags
 
 .syntastic_javac_config
 
