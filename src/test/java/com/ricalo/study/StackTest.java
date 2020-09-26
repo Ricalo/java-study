@@ -23,7 +23,7 @@ public class StackTest {
     stack.pop();
   }
 
-  @Test
+  @Test(expected = Test.None.class)
   public void testThousandElements() {
     final Stack stack = new Stack();
 
