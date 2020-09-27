@@ -9,8 +9,9 @@ public final class MathUtil {
 
   /**
    * Returns the factorial of the provided value.
+   *
    * @param value The value whose factorial is calculated.
-   * @return      The factorial of the value provided.
+   * @return The factorial of the value provided.
    */
   public static int factorial(@NonNull final int value) {
     if (value < 0) {
@@ -23,11 +24,11 @@ public final class MathUtil {
   }
 
   /**
-   * Returns the value of the base elevated to the power using a recursive
-   * algorithm.
-   * @param base  The base value that is elevated to the power.
+   * Returns the value of the base elevated to the power using a recursive algorithm.
+   *
+   * @param base The base value that is elevated to the power.
    * @param power The value to whom the base is elevated to.
-   * @return      The value of the base elevated to the power.
+   * @return The value of the base elevated to the power.
    */
   public static double toPowerRecursive(@NonNull final double base, @NonNull final double power) {
     if (power == 0) {
@@ -44,11 +45,11 @@ public final class MathUtil {
   }
 
   /**
-   * Returns the value of the base elevated to the power using an iterative
-   * algorithm.
-   * @param base  The base value that is elevated to the power.
+   * Returns the value of the base elevated to the power using an iterative algorithm.
+   *
+   * @param base The base value that is elevated to the power.
    * @param power The value to whom the base is elevated to.
-   * @return      The value of the base elevated to the power.
+   * @return The value of the base elevated to the power.
    */
   public static double toPowerIterative(@NonNull final double base, @NonNull final double power) {
     double ret = 1;

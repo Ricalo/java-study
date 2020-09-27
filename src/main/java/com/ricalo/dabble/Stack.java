@@ -1,7 +1,6 @@
 package com.ricalo.dabble;
 
 import java.util.EmptyStackException;
-
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class Stack {
@@ -9,6 +8,7 @@ public class Stack {
 
   /**
    * Returns the element at the top of the stack.
+   *
    * @returns The element at the top of the stack.
    * @throws EmptyStackException if the stack is empty.
    */
@@ -24,6 +24,7 @@ public class Stack {
 
   /**
    * Inserts an element at the top of the stack.
+   *
    * @param data The element to be inserted at the top of the stack.
    */
   public void push(@NonNull final int data) {
@@ -46,4 +47,3 @@ public class Stack {
     return stringBuilder.toString();
   }
 }
-

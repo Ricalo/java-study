@@ -10,7 +10,7 @@ plugins {
     id 'checkstyle'
     id 'jacoco'
     id 'java-library'
-    id 'pmd'
+    id 'com.diffplug.spotless' version '5.6.1'
 }
 
 repositories {
@@ -37,8 +37,10 @@ jacocoTestReport {
     }
 }
 
-pmd {
-    ruleSets = ['pmd-ruleset.xml']
+spotless {
+    java {
+        googleJavaFormat()
+    }
 }
 
 tasks.withType(Checkstyle) {

@@ -1,7 +1,6 @@
 package com.ricalo.dabble;
 
 import java.util.EmptyStackException;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ public class StackTest {
 
     final int pushed = 1;
     stack.push(pushed);
-        
+
     final int popped = stack.pop();
     Assert.assertSame(popped, pushed);
   }

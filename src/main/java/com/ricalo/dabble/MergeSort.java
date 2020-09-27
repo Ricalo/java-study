@@ -1,12 +1,10 @@
 package com.ricalo.dabble;
 
 import java.util.Arrays;
-
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class MergeSort extends AbstractArraySort {
-  void internalSort(@NonNull final int start, @NonNull final int end,
-          @NonNull final int... array) {
+  void internalSort(@NonNull final int start, @NonNull final int end, @NonNull final int... array) {
     if (array.length > 1) {
       System.out.println("  Splitting: " + Arrays.toString(array));
       final int mid = array.length / 2;
@@ -20,8 +18,8 @@ public class MergeSort extends AbstractArraySort {
       int rightIndex = 0;
       int resultIndex = 0;
 
-      System.out.print("    Merging: " + Arrays.toString(left)
-              + " and " + Arrays.toString(right) + " -> ");
+      System.out.print(
+          "    Merging: " + Arrays.toString(left) + " and " + Arrays.toString(right) + " -> ");
 
       while (leftIndex < left.length && rightIndex < right.length) {
         if (left[leftIndex] < right[rightIndex]) {
