@@ -1,10 +1,16 @@
 package com.ricalo.dabble;
 
+import com.google.common.flogger.FluentLogger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public final class MathUtil {
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
+
   private MathUtil() {
-    throw new AssertionError("Instantiating a utility class");
+    String message = "Do not instantiate the MathUtil utility class";
+    AssertionError assertionError = new AssertionError(message);
+    logger.atWarning().withCause(assertionError).log(message);
+    throw assertionError;
   }
 
   /**
@@ -15,7 +21,10 @@ public final class MathUtil {
    */
   public static int factorial(@NonNull final int value) {
     if (value < 0) {
-      throw new ArithmeticException("Factorial doesn't accept negative numbers");
+      String message = "Factorial doesn't accept negative numbers";
+      ArithmeticException arithmeticException = new ArithmeticException(message);
+      logger.atWarning().withCause(arithmeticException).log(message, value);
+      throw arithmeticException;
     } else if (value == 0) {
       return 1;
     } else {

@@ -1,10 +1,12 @@
 package com.ricalo.dabble;
 
+import com.google.common.flogger.FluentLogger;
 import java.util.EmptyStackException;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class Stack {
   ListElement head;
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
   /**
    * Returns the element at the top of the stack.
@@ -14,7 +16,10 @@ public class Stack {
    */
   public int pop() {
     if (head == null) {
-      throw new EmptyStackException();
+      String message = "Attempt to perform a pop operation on an empty stack";
+      EmptyStackException stackException = new EmptyStackException();
+      logger.atWarning().withCause(stackException).log(message, head);
+      throw stackException;
     } else {
       final int temp = head.data;
       head = head.next;
