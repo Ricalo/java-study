@@ -52,5 +52,5 @@ tasks.withType(Checkstyle) {
 
 checkstyle {
     configFile rootProject.file('checkstyle-google.xml')
-    toolVersion '8.3'
+    toolVersion '8.36'
 }
