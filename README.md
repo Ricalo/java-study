@@ -1,9 +1,8 @@
-# Java study
-[![Build Status](https://travis-ci.org/Ricalo/java-study.svg?branch=main)](https://travis-ci.org/Ricalo/java-study)
-[![codecov](https://codecov.io/gh/Ricalo/java-study/branch/main/graph/badge.svg)](https://codecov.io/gh/Ricalo/java-study)
+# Java dabble
+[![Build Status](https://travis-ci.org/Ricalo/java-dabble.svg?branch=main)](https://travis-ci.org/Ricalo/java-dabble)
+[![codecov](https://codecov.io/gh/Ricalo/java-dabble.svg)](https://codecov.io/gh/Ricalo/java-dabble)
 
-Set of classes and tests to study algorithms and data structures using the Java
-language.
+Random tinkering and testing stuff with the Java programming language.
 
 ## Algorithms
 
