@@ -1,4 +1,4 @@
-package com.ricalo.study;
+package com.ricalo.dabble;
 
 import org.junit.Assert;
 import org.junit.Before;

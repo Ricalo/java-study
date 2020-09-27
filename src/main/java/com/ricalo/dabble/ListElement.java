@@ -1,4 +1,4 @@
-package com.ricalo.study;
+package com.ricalo.dabble;
 
 public class ListElement {
   ListElement next;

@@ -1,4 +1,4 @@
-package com.ricalo.study;
+package com.ricalo.dabble;
 
 public class BubbleSortTest extends AbstractArraySortTest {
   AbstractArraySort getArraySort() {

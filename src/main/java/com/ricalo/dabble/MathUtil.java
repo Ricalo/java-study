@@ -1,4 +1,4 @@
-package com.ricalo.study;
+package com.ricalo.dabble;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
