@@ -50,3 +50,6 @@ build
 .classpath
 .project
 .settings/
+
+# Bazel
+bazel-*
