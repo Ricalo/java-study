@@ -61,8 +61,7 @@ public abstract class AbstractArraySortTest {
 
   @Test
   public void testOneElement() {
-    final int[] data = {672};
-    final int[] sortedData = arraySort.sort(data);
+    final int[] sortedData = arraySort.sort(672);
 
     Assert.assertTrue(isSorted(sortedData));
   }
