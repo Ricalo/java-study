@@ -19,5 +19,5 @@ Random tinkering and testing stuff with the Java programming language.
 ## Run tests
 
 ```
-./gradlew clean build test --info
+bazel test --test_output=all :all
 ```
