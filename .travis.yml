@@ -1,9 +1,19 @@
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - wget
+      - pkg-config
+before_install:
+  - wget https://github.com/bazelbuild/bazel/releases/download/3.6.0/bazel_3.6.0-linux-x86_64.deb
+  - sha256sum -c tools/bazel_3.6.0-linux-x86_64.deb.sha256
+  - sudo dpkg -i bazel_3.6.0-linux-x86_64.deb
 language: java
 jdk:
   - openjdk11
 script:
-  - ./gradlew check
-  - ./gradlew jacocoTestReport
+  - bazel test :all
+  - bazel coverage :all
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-

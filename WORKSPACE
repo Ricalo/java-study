@@ -20,6 +20,8 @@ maven_install(
     "junit:junit:4.13",
     "org.apache.commons:commons-math3:3.6.1",
     "org.checkerframework:checker:3.7.0",
+    "org.jacoco:org.jacoco.core:0.8.6",
+    "org.jacoco:org.jacoco.report:0.8.6",
   ],
   repositories = [
     "https://jcenter.bintray.com",
