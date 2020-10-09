@@ -16,4 +16,9 @@ script:
   - bazel test :all
   - bazel coverage :all
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -f "./bazel-testlogs/BubbleSortTests/coverage.dat"
+  - bash <(curl -s https://codecov.io/bash) -f "./bazel-testlogs/InsertionSortTests/coverage.dat"
+  - bash <(curl -s https://codecov.io/bash) -f "./bazel-testlogs/MathUtilTests/coverage.dat"
+  - bash <(curl -s https://codecov.io/bash) -f "./bazel-testlogs/MergeSortTests/coverage.dat"
+  - bash <(curl -s https://codecov.io/bash) -f "./bazel-testlogs/QuickSortTests/coverage.dat"
+  - bash <(curl -s https://codecov.io/bash) -f "./bazel-testlogs/StackTests/coverage.dat"
