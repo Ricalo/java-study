@@ -6,11 +6,16 @@ Random tinkering and testing stuff with the Java programming language.
 
 ## Algorithms
 
+### Sorting
 * Bubble sort
 * Factorial
 * Insertion sort
 * Merge sort
 * Quick sort
+
+### Dynamic programming
+
+* Fibonacci (memoization)
 
 ## Data structures
 

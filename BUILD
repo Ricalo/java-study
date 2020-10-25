@@ -29,6 +29,15 @@ java_test(
 )
 
 java_test(
+  name = "FibonacciTests",
+  size = "small",
+  test_class = "com.ricalo.dabble.FibonacciTest",
+  runtime_deps = [
+    ":tests",
+  ],
+)
+
+java_test(
   name = "InsertionSortTests",
   size = "small",
   test_class = "com.ricalo.dabble.InsertionSortTest",
