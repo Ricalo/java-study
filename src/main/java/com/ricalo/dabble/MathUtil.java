@@ -79,4 +79,29 @@ public final class MathUtil {
 
     return negativePower ? 1 / ret : ret;
   }
+
+  /**
+   * Returns the approximate square root of the value provided. 
+   *
+   * @param value   The value for which to calculate the square root.
+   * @param epsilon The acceptable error.
+   * @return        The square root of value that is within the acceptable error.
+   */
+  public static double squareRoot(double value, double epsilon) {
+    double initialGuess = value;
+    return MathUtil.squareRootRecursive(initialGuess, value, epsilon);
+  }
+
+  private static double squareRootRecursive(double guess, double value, double epsilon) {
+    final double guessSquare = guess * guess;
+    final double diff = guessSquare - value;
+    final double absDiff = Math.abs(diff);
+    if(absDiff <= epsilon) {
+      return guess;
+    } else {
+      // Use Newton's method to calculate the new guess.
+      double newGuess = (guess + (value / guess)) / 2;
+      return squareRootRecursive(newGuess, value, epsilon);
+    }
+  }
 }

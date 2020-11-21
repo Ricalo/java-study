@@ -114,4 +114,24 @@ public class MathUtilTest {
   public void testPowerIterativePositiveBaseNegativePower() {
     Assert.assertEquals(0.125, MathUtil.toPowerIterative(2, -3), 0);
   }
+
+  @Test
+  public void testSquareRootOfZero() {
+    Assert.assertEquals(0, MathUtil.squareRoot(0, 0), 0);
+  }
+
+  @Test
+  public void testSquareRootOfOne() {
+    Assert.assertEquals(1, MathUtil.squareRoot(1, 0), 0);
+  }
+
+  @Test
+  public void testSquareRootOfFour() {
+    Assert.assertEquals(2, MathUtil.squareRoot(4, 0), 0);
+  }
+
+  @Test
+  public void testSquareRootOfTwo() {
+    Assert.assertEquals(1.41, MathUtil.squareRoot(2, 0.0001), 0.01);
+  }
 }
