@@ -38,6 +38,15 @@ java_test(
 )
 
 java_test(
+  name = "GraphTests",
+  size = "small",
+  test_class = "com.ricalo.dabble.GraphTest",
+  runtime_deps = [
+    ":tests",
+  ],
+)
+
+java_test(
   name = "InsertionSortTests",
   size = "small",
   test_class = "com.ricalo.dabble.InsertionSortTest",
