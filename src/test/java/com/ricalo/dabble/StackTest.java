@@ -1,7 +1,7 @@
 package com.ricalo.dabble;
 
+import static com.google.common.truth.Truth.assertThat;
 import java.util.EmptyStackException;
-import org.junit.Assert;
 import org.junit.Test;
 
 public class StackTest {
@@ -13,7 +13,7 @@ public class StackTest {
     stack.push(pushed);
 
     final int popped = stack.pop();
-    Assert.assertSame(popped, pushed);
+    assertThat(popped).isEqualTo(pushed);
   }
 
   @Test(expected = EmptyStackException.class)
@@ -36,7 +36,7 @@ public class StackTest {
   public void testToStringEmptyStack() {
     final Stack stack = new Stack();
 
-    Assert.assertTrue(stack.toString().isEmpty());
+    assertThat(stack.toString().isEmpty()).isTrue();
   }
 
   @SuppressWarnings("PMD.LawOfDemeter")
@@ -47,6 +47,6 @@ public class StackTest {
     final int pushed = 1;
     stack.push(pushed);
 
-    Assert.assertEquals(stack.toString(), pushed + "\n");
+    assertThat(stack.toString()).isEqualTo(pushed + "\n");
   }
 }

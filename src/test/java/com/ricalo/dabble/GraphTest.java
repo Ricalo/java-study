@@ -1,6 +1,6 @@
 package com.ricalo.dabble;
 
-import org.junit.Assert;
+import static com.google.common.truth.Truth.assertThat;
 import org.junit.Test;
 import java.util.ArrayList;
 
@@ -8,8 +8,8 @@ public class GraphTest {
   @Test
   public void testDepthFirstSearchEmpty() {
     Graph<Integer> graph = new Graph<>(98);
-    ArrayList sortedGraph = graph.depthFirstSearch();
-    Assert.assertEquals(1, sortedGraph.size(), 0);
+    ArrayList<Integer> sortedGraph = graph.depthFirstSearch();
+    assertThat(sortedGraph.size()).isEqualTo(1);
   }
 
   @Test
@@ -30,20 +30,20 @@ public class GraphTest {
     node3.adjacents.add(node4);
 
     ArrayList<Integer> sortedGraph = graph.depthFirstSearch();
-    Assert.assertEquals(6, sortedGraph.size(), 0);
-    Assert.assertEquals(0, sortedGraph.get(0), 0);
-    Assert.assertEquals(1, sortedGraph.get(1), 0);
-    Assert.assertEquals(3, sortedGraph.get(2), 0);
-    Assert.assertEquals(2, sortedGraph.get(3), 0);
-    Assert.assertEquals(4, sortedGraph.get(4), 0);
-    Assert.assertEquals(5, sortedGraph.get(5), 0);
+    assertThat(sortedGraph.size()).isEqualTo(6);
+    assertThat(sortedGraph.get(0)).isEqualTo(0);
+    assertThat(sortedGraph.get(1)).isEqualTo(1);
+    assertThat(sortedGraph.get(2)).isEqualTo(3);
+    assertThat(sortedGraph.get(3)).isEqualTo(2);
+    assertThat(sortedGraph.get(4)).isEqualTo(4);
+    assertThat(sortedGraph.get(5)).isEqualTo(5);
   }
 
   @Test
   public void testBreadthFirstSearchEmpty() {
     Graph<Integer> graph = new Graph<>(98);
     ArrayList sortedGraph = graph.breadthFirstSearch();
-    Assert.assertEquals(1, sortedGraph.size(), 0);
+    assertThat(sortedGraph.size()).isEqualTo(1);
   }
 
   @Test
@@ -64,12 +64,12 @@ public class GraphTest {
     node3.adjacents.add(node4);
 
     ArrayList<Integer> sortedGraph = graph.breadthFirstSearch();
-    Assert.assertEquals(6, sortedGraph.size(), 0);
-    Assert.assertEquals(0, sortedGraph.get(0), 0);
-    Assert.assertEquals(1, sortedGraph.get(1), 0);
-    Assert.assertEquals(4, sortedGraph.get(2), 0);
-    Assert.assertEquals(5, sortedGraph.get(3), 0);
-    Assert.assertEquals(3, sortedGraph.get(4), 0);
-    Assert.assertEquals(2, sortedGraph.get(5), 0);
+    assertThat(sortedGraph.size()).isEqualTo(6);
+    assertThat(sortedGraph.get(0)).isEqualTo(0);
+    assertThat(sortedGraph.get(1)).isEqualTo(1);
+    assertThat(sortedGraph.get(2)).isEqualTo(4);
+    assertThat(sortedGraph.get(3)).isEqualTo(5);
+    assertThat(sortedGraph.get(4)).isEqualTo(3);
+    assertThat(sortedGraph.get(5)).isEqualTo(2);
   }
 }

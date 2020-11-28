@@ -17,6 +17,7 @@ maven_install(
     "com.google.guava:guava:29.0-jre",
     "com.google.flogger:flogger:0.5.1",
     "com.google.flogger:flogger-system-backend:0.5.1",
+    "com.google.truth:truth:1.1",
     "junit:junit:4.13",
     "org.apache.commons:commons-math3:3.6.1",
     "org.checkerframework:checker:3.7.0",
