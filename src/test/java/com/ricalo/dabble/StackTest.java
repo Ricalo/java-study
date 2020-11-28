@@ -23,15 +23,6 @@ public class StackTest {
     assertThrows(EmptyStackException.class, () -> stack.pop());
   }
 
-  @Test(expected = Test.None.class)
-  public void testThousandElements() {
-    final Stack stack = new Stack();
-
-    for (int i = 0; i < 1000; i++) {
-      stack.push(i);
-    }
-  }
-
   @SuppressWarnings("PMD.LawOfDemeter")
   @Test
   public void testToStringEmptyStack() {
