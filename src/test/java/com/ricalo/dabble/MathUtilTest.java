@@ -1,6 +1,7 @@
 package com.ricalo.dabble;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import org.junit.Test;
 
 @SuppressWarnings("PMD.TooManyMethods")
@@ -20,9 +21,10 @@ public class MathUtilTest {
     assertThat(MathUtil.factorial(8)).isEqualTo(40320);
   }
 
-  @Test(expected = ArithmeticException.class)
+  @Test
   public void testFactorialNegative() {
-    MathUtil.factorial(-1);
+    ArithmeticException e = assertThrows(ArithmeticException.class, () -> MathUtil.factorial(-1));
+    assertThat(e).hasMessageThat().isEqualTo("Factorial doesn't accept negative numbers");
   }
 
   @Test

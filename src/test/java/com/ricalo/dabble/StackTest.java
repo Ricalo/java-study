@@ -2,6 +2,7 @@ package com.ricalo.dabble;
 
 import static com.google.common.truth.Truth.assertThat;
 import java.util.EmptyStackException;
+import static org.junit.Assert.assertThrows;
 import org.junit.Test;
 
 public class StackTest {
@@ -16,10 +17,10 @@ public class StackTest {
     assertThat(popped).isEqualTo(pushed);
   }
 
-  @Test(expected = EmptyStackException.class)
+  @Test
   public void testPopEmptyStack() {
     final Stack stack = new Stack();
-    stack.pop();
+    assertThrows(EmptyStackException.class, () -> stack.pop());
   }
 
   @Test(expected = Test.None.class)
