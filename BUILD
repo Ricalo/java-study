@@ -16,6 +16,7 @@ java_library(
   deps = [
     "//:dabble",
     "@maven//:junit_junit",
+    "@maven//:com_google_truth_truth",
   ],
 )
 

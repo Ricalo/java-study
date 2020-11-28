@@ -1,6 +1,6 @@
 package com.ricalo.dabble;
 
-import org.junit.Assert;
+import static com.google.common.truth.Truth.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,7 +32,7 @@ public abstract class AbstractArraySortTest {
     final int[] data = {1, 2, 3, 4};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
@@ -40,7 +40,7 @@ public abstract class AbstractArraySortTest {
     final int[] data = {4, 3, 2, 1};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
@@ -48,7 +48,7 @@ public abstract class AbstractArraySortTest {
     final int[] data = {};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
@@ -56,14 +56,14 @@ public abstract class AbstractArraySortTest {
     final int[] data = {1, 1, 1, 1};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
   public void testOneElement() {
     final int[] sortedData = arraySort.sort(672);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
@@ -71,7 +71,7 @@ public abstract class AbstractArraySortTest {
     final int[] data = {4, 3, 5, 2, 1};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
@@ -79,7 +79,7 @@ public abstract class AbstractArraySortTest {
     final int[] data = {-4, -3, -5, -2, -1};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 
   @Test
@@ -87,6 +87,6 @@ public abstract class AbstractArraySortTest {
     final int[] data = {-4, -3, -5, 2, 1, 8, 0};
     final int[] sortedData = arraySort.sort(data);
 
-    Assert.assertTrue(isSorted(sortedData));
+    assertThat(isSorted(sortedData)).isTrue();
   }
 }
