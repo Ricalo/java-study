@@ -6,12 +6,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 public final class MathUtil {
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
-  private MathUtil() {
-    String message = "Do not instantiate the MathUtil utility class";
-    AssertionError assertionError = new AssertionError(message);
-    logger.atWarning().withCause(assertionError).log(message);
-    throw assertionError;
-  }
+  private MathUtil() {}
 
   /**
    * Returns the factorial of the provided value.
