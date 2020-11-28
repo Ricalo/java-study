@@ -13,6 +13,14 @@ public class GraphTest {
   }
 
   @Test
+  public void testDepthFirstSearchNull() {
+    Graph<Integer> graph = new Graph<>(0);
+    graph.root = null;
+    ArrayList<Integer> sortedGraph = graph.depthFirstSearch();
+    assertThat(sortedGraph.size()).isEqualTo(0);
+  }
+
+  @Test
   public void testDepthFirstSearchSixNodeGraph() {
     Graph<Integer> graph = new Graph<>(0);
     Graph<Integer>.Node node1 = graph.new Node(1);
